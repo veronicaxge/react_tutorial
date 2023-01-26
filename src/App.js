@@ -1,8 +1,12 @@
+import { useState } from "react"; //`useState` function to tell components to "remember" things. 
+
 // Create a square component. Indicate `value` as the property that a square can take.
-function Square({ value }){ //need to put `value` in {} 
+function Square(){ 
+
+  const[value, setValue] = useState(null);
 
   function handleClick(){
-    console.log("Clicked!")
+    setValue('X');
   }
 
   return (
@@ -19,19 +23,19 @@ export default function Board() {
   return (
     <>
       <div className="board-row">
-        <Square value = "1" />  {/* pass a value property to each square */}
-        <Square value = "2" />
-        <Square value = "3" />
+        <Square />  {/* pass a value property to each square */}
+        <Square />
+        <Square />
       </div>
       <div className="board-row">
-        <Square value = "4" />
-        <Square value = "5" />
-        <Square value = "6" />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className="board-row">
-        <Square value = "7" />
-        <Square value = "8" />
-        <Square value = "9" />
+        <Square />
+        <Square />
+        <Square />
       </div>
     </>
   );
